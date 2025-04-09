@@ -1,16 +1,23 @@
-# 🔴 Shutdown Button
+# 🔴 Shutdown Timer Application
 
-A simple app that shuts down your computer with one click. Works on Windows, Mac, and Linux.
+A simple cross-platform app that lets you schedule your computer shutdown with flexible timing options.
 
 ## ✨ What it does
 
-This tiny application provides a single button that shuts down your computer immediately when clicked.
+This application allows you to:
+- Shut down your computer immediately
+- Schedule shutdown after 10, 20, or 30 minutes
+- Cancel a scheduled shutdown
 
 ## 🚀 How to use
 
-1. Run `python shutdown_app.py`
-2. Click the "Shutdown" button
-3. Your computer will shut down
+1. Run `python shutdown_timer.py`
+2. Select your desired shutdown time:
+   - **Now**: Immediate shutdown
+   - **10 Minutes**: Shutdown after 10 minutes
+   - **20 Minutes**: Shutdown after 20 minutes
+   - **30 Minutes**: Shutdown after 30 minutes
+3. To cancel a scheduled shutdown, click the **Cancel Shutdown** button
 
 ## 📋 Requirements
 
@@ -19,46 +26,19 @@ This tiny application provides a single button that shuts down your computer imm
 
 ## ⚠️ Notes
 
-- Be careful! The app shuts down immediately without confirmation
-- Unsaved work will be lost
+- Be careful with immediate shutdown as unsaved work will be lost
 - Mac and Linux users may need to enter their password
+- The cancel button works only for scheduled shutdowns
 
-## 💻 Code
-
-```python
-import os
-import tkinter as tk
-import platform
-
-def shutdown():
-    system_platform = platform.system()
-    if system_platform == "Windows":
-        os.system("shutdown /s /t 0")
-    elif system_platform == "Darwin":  # macOS
-        os.system("sudo shutdown -h now")
-    elif system_platform == "Linux":
-        os.system("shutdown now")
-    else:
-        print("Unsupported OS")
-
-# Create a Tkinter window
-window = tk.Tk()
-window.title("Shutdown Button")
-
-# Create a button and link it to the shutdown function
-shutdown_button = tk.Button(window, text="Shutdown", command=shutdown)
-shutdown_button.pack(pady=20)
-
-# Run the Tkinter event loop
-window.mainloop()
-```
 
 ## 🌟 Customize
 
-- Change button text
-- Add confirmation dialog
-- Add restart or sleep options
+- Add custom time input
+- Change button colors or layout
+- Add system notifications
+- Add restart options
 
 ## 👤 Created by
 
-Younnse Amazzal
+Younsse Amazzal
+
